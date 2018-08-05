@@ -4,6 +4,9 @@ from .forms import RestaurantForm, ItemForm, SignupForm, SigninForm
 from django.contrib.auth import login, authenticate, logout
 from django.http import JsonResponse
 from django.db.models import Q
+from rest_framework.generics import DestroyAPIView
+from app_name.models import ModelName
+from .serializers import ListSerializer
 
 def restaurant_favorite(request, restaurant_id):
     restaurant_obj = Restaurant.objects.get(id=restaurant_id)
